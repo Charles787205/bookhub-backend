@@ -5,6 +5,10 @@ class User
 {
   public $first_name, $middle_name, $last_name, $email, $password, $created_at;
 
+  public function getFullName()
+  {
+    return ucfirst($this->first_name) . " " . ucfirst($this->middle_name) . " " . ucfirst($this->last_name);
+  }
   public function setUser($first_name, $middle_name, $last_name, $email, $password)
   {
     $this->first_name = $first_name;
@@ -32,7 +36,7 @@ class User
     }
   }
 
-  private static function getUserById($userId)
+  public static function getUserById($userId)
   {
     $db = new Database();
     $conn = $db->conn;

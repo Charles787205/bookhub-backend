@@ -36,13 +36,13 @@
             <td><?= $request->duration_no . " " . $request->duration_unit ?></td>
             <td><?= $request->status ?></td>
             <td style=" display:flex; gap:10px;">
-              <form action="/api/request/update_request.php" method="post" class="col">
+              <form action="/bookhub/api/request/update_request.php" method="post" class="col">
                 <input type="hidden" name="request_id" value="<?= $request->id ?>">
 
                 <input type="hidden" name="status" value="approved">
                 <button class="btn btn-primary" style="width:100%;">Approve</button>
               </form>
-              <form action="/api/request/update_request.php" method="post" class="col">
+              <form action="/bookhub/api/request/update_request.php" method="post" class="col">
                 <input type="hidden" name="request_id" value="<?= $request->id ?>">
                 <input type="hidden" name="status" value="rejected">
                 <button class="btn btn-danger" style="width:100%;">Reject</button>

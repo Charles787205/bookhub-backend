@@ -16,5 +16,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     BorrowedBooks::addBorrowedBooks($borrowed_book);
   }
-  return header('Location: /admin/index.php');
+  return header('Location: /bookhub/admin/index.php');
 }

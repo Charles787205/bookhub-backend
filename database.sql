@@ -48,3 +48,21 @@ CREATE TABLE `borrowed_books` (
 );
 
 
+CREATE TABLE `book_rating` (
+  `book_id` VARCHAR(255) NOT NULL,
+  `user_id` INT(11) NOT NULL,
+  `rating` INT(11) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  Foreign Key (`book_id`) REFERENCES `books`(`id`),
+  Foreign Key (`user_id`) REFERENCES `users`(`id`),
+  PRIMARY KEY (`book_id`, `user_id`)
+);
+
+CREATE TABLE `favorites` (
+  `book_id` VARCHAR(255) NOT NULL,
+  `user_id` INT(11) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  Foreign Key (`book_id`) REFERENCES `books`(`id`),
+  Foreign Key (`user_id`) REFERENCES `users`(`id`),
+  PRIMARY KEY (`book_id`, `user_id`)
+);

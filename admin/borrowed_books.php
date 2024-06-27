@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $borrowed_book_id = $_POST['borrowed_book_id'];
   $status = $_POST['status'];
   BorrowedBooks::returnBook($borrowed_book_id);
-  header('Location: /admin/borrowed_books.php');
+  header('Location: /bookhub/admin/borrowed_books.php');
 }
 ?>
 <!DOCTYPE html>
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <?= $remaining_date_interval->format('%R%a days') ?></td>
 
             <td style=" display:flex; gap:10px;">
-              <form action="" method="post" class="col">
+              <form action="/bookhub/admin/borrowed_books.php" method="post" class="col">
                 <input type="hidden" name="borrowed_book_id" value="<?= $borrowed_book->id ?>">
 
                 <input type="hidden" name="status" value="return">
